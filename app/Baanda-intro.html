@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="scripts/humanLanding.js"></script>
+    <title>Human Landing</title>
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+</head>
+
+<body onload="startknock();">
+
+    <!--body -->
+    <!--body style="background-image:url(./images/funding.png); background-repeat:no-repeat; background-size:cover;" -->
+
+    <table>
+        <tr>
+            <td>
+                <div id="knock-knock">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="images/knock-knock.gif" height="100" width="100"> &nbsp;&nbsp;&nbsp;
+                    <b>knock ... knock</b>
+                    <br>
+                    <br>
+                </div>
+                <div id="spaces">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="images/baanda-fish.gif" height="150" width="150"> &nbsp;&nbsp;
+                </div>
+                <div id="baanda-fish">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="images/baanda-fish.gif" height="150" width="150"> &nbsp;&nbsp;
+                </div>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+
+    <table width="80%" border="0">
+        <tr>
+            <td width="50%" align="center">
+                <font color="#824a2a" size="3">
+                    <b>
+                        <I>&nbsp;
+                            <span id="baandatalk"></span>
+                        </I>
+                    </b>
+                </font>
+            </td>
+            <td rowspan="2" width="50%">
+                <div id="getstarted">
+                    <font size="3" color="Green">
+                        <form id="registerForm" action="#">
+                            Your name
+                            <font color=red>*</font>
+                            <input type="text" name='visitorname' size=30 maxlength=30> I will know you by.
+                            <br>
+                            <br> Your email
+                            <font color=red>*</font>
+                            <input type="text" name='email' id='email' size=30 maxlength=30> that is your anchor.
+                            <br>
+                            <br> A password
+                            <font color=red>*</font>
+                            <input type="text" name='pwd' id='pwd' size=20 maxlength=20> to confirm that it is you.
+                            <br>
+                            <br>
+                            <font color=blue>
+                                <i>Rest are optional but let's spend a little time here ... please.
+                                    <br>
+                                    <br> What is your deep aspiration. Like, you can say "I want to be a...",
+                                    <br> "I wish I were a...", "I am a...", "I will be a..." and then add a word like
+                                    <br> dreamer, painter, scientist, explorer, nobody, rich, powerful, scholarly, artist, ...
+                                    <input type="text" name='visitorsaspiration' size=20 maxlength=20> &nbsp;&nbsp; And then, tell me a little about your best friend. What is his/her aspiration.
+                                    Like, tell me 'he/she want to be, is, will be a' ...
+                                    <input type="text" name='visitofiendaspiration' size=20 maxlength=20>
+                                </i>
+                            </font>
+                        </form>
+                        <p align="center">
+                            <button onclick="visitorRegistration()">BaandaID </button>
+                            <br>
+                            <br>
+                            <span id="regmessage"></span>
+                        </p>
+                    </font>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="50%" align="center">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div id="visitortalk">
+
+                    <form id="visitorForm" action="#">
+                        <font color="blue" size=3>
+                            <b>Talk to me</b>
+                        </font>
+                        <textarea cols="40" rows="5" name="talk" style="width:100; height:30; font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif; font-size:18px"></textarea>
+                    </form>
+                    <button onclick="visitorTalking()">talk </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button onclick="skipToRegisration()">Skip the chat </button>
+                </div>
+            </td>
+        </tr>
+
+        <!--form id= "visitorForm" action="#">
+           talk1: <input type="text" id="talk1" name="talk1" style="width:280; height:50; font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif; font-size:22px">
+            talk: <textarea cols="40" rows="4" name="talk" style="width:100; height:30; font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif; font-size:18px"></textarea>
+        </form>
+        <button onclick="visitorTalking()">talk </button>
+        <button onclick="visitorTalking1()">talk 1</button -->
+
+    </table>
+
+    <!--form id="registerForm" action="#">
+            Your name <font color=red>*</font>
+            <input type="text" name='visitorname'  size=30 maxlength=30> I will know you by.
+            <br>
+            <br> Your email <font color=red>*</font>
+            <input type="text" name='email' id='email' size=30 maxlength=30> that is your anchor.
+            <br>
+            <br> A password <font color=red>*</font>
+            <input type="text" name='pwd' id='pwd' size=20 maxlength=20> to confirm that it is you.
+            <br><br>
+            <font color=blue><i>Rest are optional but let's spend a little time here ... please. <br><br>
+            What is your deep aspiration. Like, you can say "I want to be a...", <br>
+            "I wish I were a...", "I am a...", "I will be a..." and then add a word like <br>
+            dreamer, painter, scientist, explorer, nobody, rich, powerful, scholarly, artist, ... 
+            <input type="text" name='visitorsaspiration' size=20 maxlength=20> &nbsp;&nbsp; And then,
+            tell me a little about your best friend. What is his/her aspiration. Like, tell me 'he/she  
+            want to be, is, will be a' ... <input type="text" name='visitofiendaspiration' size=20 maxlength=20>
+            </i></font >
+        </form>
+        <button onclick="visitorRegistration()">BaandaIt </button><br><br>
+        <span id="regmessage"></span>
+    <span id="message1"></span -->
+
+        <br>1. Debug Messages :
+        <span id="message1"></span>
+        <br>2. Debug Messages :
+        <span id="message2"></span>
+
+    <script type="text/javascript" src="scripts/baanda-intro.js"></script>
+</body>
+
+</html>

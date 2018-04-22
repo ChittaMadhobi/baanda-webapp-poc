@@ -1,0 +1,98 @@
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="scripts/humanLanding.js"></script>
+  <title>Human Landing</title>
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .bg {
+      /* The image used */
+      background-image: url("./images/world-map.jpg");
+
+      /* Full height */
+      height: 100%; 
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="bg">
+    <font size="6" color="white"> &nbsp;&nbsp;<b><u> Agreements</u></b> </font>
+    </br>
+    </br>
+    <table border="0" width="100%" style="margin: 0px;">
+      <tr>
+        <td width="25%">
+          <font color="white" size="3"><b>Select a domain of interest: </b></font>
+          </br></br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <select size="6">
+            <option value="copyright" onclick="copyright()" selected>Copyright and Recordkeep</option>
+            <option value="roommate" onclick="roommate()" >Roommate Agreement</option>
+            <option value="p2pLending" onclick="nottrained()">P2P Small Lending</option>
+            <option value="notarize" onclick="nottrained()">Notarize Document</option>
+            <option value="smallbiz" onclick="nottrained()">Small Business Setup</option>
+            <option value="sellerfin" onclick="nottrained()">P2P Seller Financing</option>
+            <option value="microecon" onclick="nottrained()">Micro-economy in 3rd world</option>
+            <option value="retailescrow" onclick="nottrained()">Retail Escrow</option>
+            <option value="retailescrowinsurance" onclick="nottrained()">Retail Escrow Insurance</option>
+            <option value="livingtogether" onclick="nottrained()">Living Together Agreement</option>
+            <option value="globaltradefinance" onclick="nottrained()">Global Trade and Finance</option>
+            <option value="clinicaltrials" onclick="nottrained()">Clinical Trials</option>
+            <option value="rentcontracts" onclick="nottrained()">Rent Contract</option>
+            <option value="colaborationhealthinsurace" onclick="nottrained()">Health Insurance Co-op</option>
+            <option value="p2ptitle" onclick="nottrained()">Property Title</option>
+            <option value="other" onclick="nottrained()">Other Domains</option>
+          </select>
+          
+        </td>
+        <td width="50%"></br></br><img id="image" height="500" width="700" align="center" src="./images/copyright.png" /></td>
+        <!--td width="25%" align="center"><button onclick="domainSelect()"><img src="./images/handshake.jpg" height="40" width="60"></button -->
+        <td width="25%" align="center"><button type="button" onclick="domainSelect()"><font size="4">CONTINUE</font></button>  
+        </br> <font color="white">Click button for the next step </font></td>
+      </tr>  
+    </table>
+  </div>
+  Message for test: <span id="message" class="notready">...</span> </br>
+  Message for test1: <span id="message1" class="notready">...</span> </br>
+  Message for test2: <span id="message2" class="notready">...</span> </br>
+
+
+
+
+
+
+
+
+
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/human.js"></script>
+  <script src="scripts/utils.js"></script>
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

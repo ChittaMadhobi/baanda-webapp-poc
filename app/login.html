@@ -1,0 +1,36 @@
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="styles/login_style.css">
+
+</head>
+
+<body style="background-image:url(./images/connectedWorld.png); background-repeat:no-repeat; background-size:cover;">
+    <h1 align="center">
+
+
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn" onclick="myfun()">Open Modal</button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <Form action="javascript:passwordCheck()" method="GET" name="contract_form" id="contract_form">
+                    Password:
+                    <input type="text" name="pwd" id="pwd" size="15" maxlength="15">
+                    <input type="submit" value="Check">
+                </Form>
+                <span id="message1">...</span>
+            </div>
+        </div>
+
+
+        <script type="text/javascript" src="scripts/login_effect.js"></script>
+</body>
+
+</html>

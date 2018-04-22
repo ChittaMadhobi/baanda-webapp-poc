@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="scripts/registerLogin.js"></script>
+    <!--script type="text/javascript" src="scripts/ethgethstuff.js"></script -->
+
+    <title>RegisterLogin </title>
+</head>
+
+<body onload="fillFormData('registration_form')" ;>
+    <table width="1200">
+        <tr>
+            <td align="center">
+                <h1>
+                    <font color="blue" size="4" face="verdana" align="center"><b>Register or Login</b></font>
+                    </br>
+                    <font color="blue" size="3" face="verdana" align="center"><b>Domain Selected : <span id="domainTitle">...</span> </b></font>
+                </h1>
+            </td>
+        </tr>
+    </table>
+    <form action="javascript:postFormData()" method="GET" name="registration_form" id="registration_form">
+        <Table border="0" bgcolor="#D0D3D4" celpadding="0" cellspacing="0" width="1200">
+            <tr>
+                <td align="right" width="17%"> &nbsp; </td>
+                <td align="left" width="30%"> &nbsp;</td>
+                <td align="left" width="50%">&nbsp;</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"><b>Email &nbsp;</b></td>
+                <td align="left" width="30%"><input type="email" name="email_addr" id="email_addr" size="55" maxlength="60"></td>
+                <td align="left" width="50%">Enter email and password to login. Enter all values to Register.</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"><b>Author Name &nbsp;</b></td>
+                <td align="left" width="30%"><input type="text" name="author_name" id="author_name" size="55" maxlength="60"></td>
+                <td align="left" width="50%" bgcolor="#ECF0F1">Enter your name. To be used for personaization only.</td>
+                <td align="right" width="3%">&nbsp; </b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"><b>Eth Address &nbsp;</b></td>
+                <td align="left" width="30%"><input type="text" name="eth_address" id="eth_address" size="55" maxlength="60"></td>
+                <td align="left" width="50%">Enter (cut/paste) your Eth account. Click 'Eth Mgmt.' to create or manage.</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"><b>Password - Passphrase&nbsp;</b></td>
+                <td align="left" width="30%"><input type="password" name="eth_password" id="eth_password" size="20" maxlength="20"></td>
+                <td align="left" width="50%" bgcolor="#ECF0F1">Enter passphrase of your Eth account; it would be same for your Baanda work. </td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"> &nbsp;</b>
+                </td>
+                <td align="left" width="30%"> &nbsp;</td>
+                <td align="left" width="50%">&nbsp;</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"> &nbsp;</b>
+                    <input type="button" value="Clear" onclick="buttonClicked('clear')">
+                    <input type="button" value="Show" onclick="buttonClicked('show')">
+                </td>
+                <td align="left" width="30%">
+                    <input type="button" value="Login" onclick="buttonClicked('login')"> &nbsp;
+                    <input type="button" value="Register" onclick="buttonClicked('registration')"> &nbsp;
+                    <input type="button" value="Ether Mgmt." onclick="buttonClicked('ethermgmt')"> &nbsp;
+                    <input type="button" value="Continue" onclick="buttonClicked('continue')">
+                </td>
+                <td align="left" width="50%" bgcolor="#ECF0F1"> Click Ether Mgmt. to create or manage your ether account.</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"> &nbsp;</b>
+                </td>
+                <td align="left" width="30%"> &nbsp;</td>
+                <td align="left" width="50%">&nbsp;</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+        </table>
+        <input type="hidden" name="domainName" id="domainName">
+    </form>
+
+
+    <!--form name="myform" action="javascript:handleIt()"-->
+    <!--form name="myform" action="javascript:handleIt()">
+        <input name="Submit" type="submit" value="Update" />
+        <button onclick="handleIt1()">form button</button>
+        <input value="Buton" type="submit" onclick="handleIt2()">
+    </form -->
+
+    </br>
+    <font color=black size=2><b>Messages:</b></font> <span id="message">...</span> </br>
+    </br>
+
+<!--
+    Message for test1: <span id="message1">...</span> </br>
+    Message for test2: <span id="message2" class="notready">...</span> </br>
+    Message for test3: <span id="message3" class="notready">...</span> </br>
+    Message for test4: <span id="message4">...</span> </br>
+    Message for test5: <span id="message5">...</span> </br>
+    Message for test6: <span id="message6">...</span> </br>
+    Message for test7: <span id="message7">...</span> </br>
+    Message for test8: <span id="message8">...</span> </br>
+    Send from account: <span id="select_to_unlock_account" class="notready">...</span> </br>
+-->
+
+</body>
+
+</html>

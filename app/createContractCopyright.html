@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="scripts/createContractCopyright.js"></script>
+    <script type="text/javascript" src="scripts/ethgethstuff.js"></script>
+
+    <title>Contract Stuff </title>
+</head>
+
+<body onload="fillFormData('contract_form')" ;>
+    <table width="1200">
+        <tr>
+            <td align="center">
+                <h1>
+                    <font color="blue" size="4" face="verdana" align="center"><b>Authoring of Copyright Contract</b></font>
+                    </br>
+                </h1>
+            </td>
+        </tr>
+    </table>
+    <form action="javascript:postFormData()" method="GET" name="contract_form" id="contract_form" >
+    <!--form action="#" name="contract_form" id="contract_form" -->
+        <Table border="0" bgcolor="#D0D3D4" celpadding="0" cellspacing="0" width="1200">
+            <tr>
+                <td align="right" width="17%"> &nbsp;</td>
+                <td align="left" width="40%"> &nbsp;</td>
+                <td align="left" width="40%"> &nbsp;</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"><b>Author Name &nbsp;</b></td>
+                <td align="left" width="40%"><span id="author_name"> </span></td>
+                <td align="left" width="40%" bgcolor="#ECF0F1">Registered name. Not used in contract creation or deployment.</td>
+                <td align="right" width="3%">&nbsp; </b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"><b>Email &nbsp;</b></td>
+                <td align="left" width="40%"><span id="email_addr"> </span></td>
+                <td align="left" width="40%">This is the email you have registered & signed in with.</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"><b>Eth Address &nbsp;</b></td>
+                <!-- td align="left" width="40%"><span id="aether_Addr"> </span></td -->
+                <td align="left" width="40%"><input type="text" name="ether_Addr" id="ether_Addr" size="40" maxlength="40"></td>
+                <td align="left" width="40%" bgcolor="#ECF0F1">This is the Eth account you would use. Eth-Gas & Baanda-gas will be charged from this account.</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"><b>Eth Balance &nbsp;</b></td>
+                <td align="left" width="40%"><span id="ether_bal"> </span></td>
+                <td align="left" width="40%">Balance in Eth in the account. Contract creation needs sufficient fund for NL to FL trans-creation and SM
+                    implemetation gas.</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"><b>Gas Required &nbsp;</b></td>
+                <td align="left" width="40%"><span id="gas_need"> </span></td>
+                <td align="left" width="40%" bgcolor="#ECF0F1">Minimum gas in Wie needed. 1 Eth = 1000000000000000000 Wei. Plus Baanda-fee for trans-creation.</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"><b>Contract Name &nbsp;</b></td>
+                <td align="left" width="40%"><input type="text" name="contract_name" id="contract_name" placeholder="Provide a contract name" size="15" maxlength="15"></td>
+                <td align="left" width="40%">Enter contract name, start with upper case alphabet, max size of 15 characters.</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"><b>Parent Contract &nbsp;</b></td>
+                <td align="left" width="40%"><input type="text" name="parent_con_addr" id="parent_con_addr" size="32" maxlength="32" placeholder="0x00000000000000000000000000000"></td>
+                <td align="left" width="40%" bgcolor="#ECF0F1">Parent contract (Softchain). Genesis (default/stand alone); not used in MVP/Demo.</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"><b>Contract Intent &nbsp;</b></td>
+                <td align="left" width="40%"><input type="text" name="contract_intent" id="contract_intent" size="55" maxlength="80" placeholder="E.g. Copyright my ideas and innovations"></td>
+                <td align="left" width="40%">Provide a intent of authoring the contract for future reference. It is an optional field.</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"><b>Eth Password &nbsp;</b></td>
+                <td align="left" width="40%"><input type="password" name="eth_password" id="eth_password" size="20" maxlength="20"></td>
+                <td align="left" width="40%" bgcolor="#ECF0F1">Provide password or passphrase of your Eth account you are using to deploy the contract.</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"><b>Provider URL &nbsp;</b></td>
+                <!--td align="left" width="40%"><input type="text" name="provider_url" id="provider_url" size="50" maxlength="50" value="http://localhost:8545"></td-->
+                <td align="left" width="40%"><input type="text" name="provider_url" id="provider_url" size="50" maxlength="50"></td>
+                <td align="left" width="40%">Now, a local Geth client is used. In production, users can use any Eth client. Baanda will init a default.</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"><b>Geth Connection Info &nbsp;</b></td>
+                <td align="left" width="40%"><span id="geth_node_info"></span></td>
+                <td align="left" width="40%" bgcolor="#ECF0F1">This is the geth node you are connected to. If connection problem try (e.g. https://ropsten.infura.io/TOKEN)</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"><b>Create Contract &nbsp;</b></td>
+                <td align="left" width="40%"> <input type="submit" value="Baanda"> &nbsp;&nbsp;
+                    <!--button onclick="postFormData()">PostData</button> &nbsp;
+                    <button onclick="getFormData()">GetData</button> &nbsp;
+                    <button onclick="ondemandFillEthInfo()">Get Balance</button --> &nbsp;
+                </td>
+                <td align="left" width="40%">Select your operation.</td>
+                <td align="right" width="3%"> &nbsp;</b>
+            </tr>
+            <tr>
+                <td align="right" width="17%"> &nbsp;</td>
+                <td align="left" width="45%"> &nbsp;</td>
+                <td align="left" width="35%">&nbsp;</td>
+                <td align="right" width="3%"> &nbsp;</td>
+            </tr>
+        </table>
+        <input type="hidden" name="emailAddress" id="emailAddress">
+        <!--input type="hidden" name="etherAddress" id="etherAddress" -->
+        <input type="hidden" name="authorName" id="authorName">
+        <input type="hidden" name="ether_balance" id="ether_balance">
+        <input type="hidden" name="gas_fee" id="gas_fee">
+    </form>
+    <!--button onclick="ondemandFillEthInfo()">Get Ether Balance</button--> <br>
+   <span id="message"></span> </br>
+   <span id="message0"></span> </br><br>
+
+    
+
+    Messages for debug -- if needed. </br>
+    Message for test1: <span id="message1">...</span> </br>
+    Message for test2: <span id="message2">...</span> </br>
+    Message for test3: <span id="message3">...</span> </br>
+    Message for test4: <span id="message4">...</span> </br>
+    Message for test5: <span id="message5">...</span> </br>
+    Message for test6: <span id="message6">...</span> </br>
+    Message for test7: <span id="message7">...</span> </br>
+    Message for test8: <span id="message8">...</span> </br>
+    Message for test9: <span id="message9">...</span> </br>
+    Message for test10: <span id="message10">...</span> </br>
+    Message for test11: <span id="message11">...</span> </br>
+    Message for test12: <span id="message12">...</span> </br>
+    Send from account: <span id="select_to_unlock_account" class="notready">...</span> </br>
+
+
+</body>
+
+</html>

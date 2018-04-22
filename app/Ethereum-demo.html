@@ -1,0 +1,238 @@
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI and BC POC</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <link rel="icon" type="image/png" href="http://thedapps.com/favicon-32x32.png" sizes="32x32" />
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+</head>
+
+<body>
+ 
+  <!-- different arrangement without css -->
+  <Font align="left" font="3" color="black"> <b>Connections </b></font>
+  <table width="100%" cellspacing="0" border="1">
+    <tr>
+      <td width="15%">Connection status: </td>
+      <td width="5%" align="left" id='connect_status'> Not connected </td>
+      <td width="5%" align="right"> Version: </td>
+      <td width="25%" align="left" id='version_information'> -- </td>
+    </tr>
+    <tr>
+      <td width="15%">Distributed connection: </td>
+      <td width="5%" align="left" id="get_peer_count"> 0 </td>
+      <td width="20%" align="left" colspan="2"> URL: <input type='text' id='provider_url' value='http://localhost:8545'> &nbsp; <button onclick="doConnect()">Connect</button>        </td>
+    </tr>
+    </tr>
+    <tr>
+      <td width="15%">Accounts ------------> Count: </td>
+      <td width="5%" align="left" id="accounts_count"> 0 </td>
+      <td width="5%" align="right"> Coinbase: </td>
+      <td width="25%" align="left" id='coinbase'> -- </td>
+    </tr>
+    <tr>
+      <td width="15%">Accounts ------------> Balance: </td>
+      <td width="5%" align="left" id="accounts_balance">.. </td>
+      <td width="5%" align="right"> Default AC: </td>
+      <td width="25%" align="left" id='defaultAccount'> -- </td>
+    </tr>
+    <tr>
+      <td width="15%">Account List: <button onclick="doGetAccounts()">Refresh</button> </td>
+      <td width="5%" align="left"> &nbsp;</td>
+      <td width="5%" align="right"> AC List: </td>
+      <td width="25%" align="left" id='accounts_list'> </td>
+    </tr>
+    <tr>
+      <td colspan="4" bgcolor="lightblue"><b>Transation Objects</b> </td>
+    </tr>
+    <tr>
+      <td width="15%"><b>Password:</b> <input id="unlock_account_password" type="text" value="Ranjan10#" /></td>
+      <td width="5%" align="left"><span id="account_balances_list">...</span> </td>
+      <td width="5%" align="right"><b> From Account: </b></td>
+      <!--td width="25%" align="left"><select id="select_to_unlock_account"></select> </td -->
+      <td width="25%" align="left"><span><select id="send_from_account"></select></span> </td>
+
+    </tr>
+    <tr>
+      <td width="15%"><span><b>Value (Ether)</b> <input id="send_value_in_ether" type="text" value="0.01" /></span></td>
+      <td width="5%" align="left"> <span><b>Gas </b></span><input id="send_gas" type="text" value="default" /></span>
+      </td>
+      <td width="5%" align="right"> <span><b>Gas Price (wei) </b></span><input id="send_gas_price" type="text" value="default" /></span>
+      </td>
+      <td width="25%" align="left"> <span><b>Data (ascii) </b></span><input id="send_data" type="text" size="50" value="default" /></span>
+        </br>
+        <span><b>Nonce </b></span><input id="send_nonce" type="text" value="default" /> </td>
+    </tr>
+    <tr>
+      <td width="15%"><b>Lock Results:</B> <span id="lock_unlock_result"></span></td>
+      <td width="5%" align="left"> <button onclick="doUnlockAccount()">Unlock</button> &nbsp;&nbsp;
+        <button onclick="doLockAccount()">Lock </button></td>
+      <td width="5%" align="right"><b> Send To:</b> </td>
+      <td width="25%" align="left"> <span><select id="send_to_account"></select></span></td>
+    </tr>
+    <tr>
+      <td width="15%"><b>Transaction Actions</b></td>
+      <td width="5%" align="left"> <span><button onclick="generateTransactionJSON()">JSON &gt;&gt;</button></span> &nbsp;&nbsp;
+        <span><button onclick="resetTransactionObjectParameters()">Reset</button></span></td>
+      <td width="5%" align="right"><b> Messages : </b></td>
+      <td width="25%" align="left"> </td>
+    </tr>
+    <tr>
+      <td width="15%"><button onclick="doSendTransaction()">Send Transaction</button>&nbsp;&nbsp;<b>Result</b></td>
+      <td width="60%" align="left" colspan="2" id="send_transaction_error_or_result"> </td>
+      <td width="15%"> <a href="" id="etherscan_io_tx_link" target="_blank">...</a> </td>
+    </tr>
+    <tr>
+      <td width="15%"><b>JSON (Ether Transaction)</b></br>
+      </td>
+      <td width="85%" align="left" colspan="3" id="send_transaction_object_json"> </td>
+    </tr>
+
+    <tr>
+      <td colspan="4" bgcolor="lightblue"><b>Smart Contract - Compile and Deploy</b> </td>
+    </tr>
+    <tr>
+      <td width="15%"><b>Code - Solidity</b></br>
+        <button id="button_do_compile" onclick="doCompileSolidityContract()">Compile Code</button>
+      </td>
+      <td width="85%" align="left" colspan="3">
+        <textarea id="sourcecode" cols="120" rows="10"> </textarea>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%" align="left" colspan="2"><b>Bytecode</b></br>
+        <textarea id="compiled_bytecode" cols="60" rows="3"></textarea>
+      </td>
+      <td width="50%" align="left" colspan="2"><b>ABI Definition</b></br>
+        <textarea id="compiled_abidefinition" cols="60" rows="3" value="abcd"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td width="15%" align="left"><b> Gas (Wei)</b>
+        <input type="text" id="deployment_estimatedgas" size="10" value="4700000" /></br>
+        ________________<button onclick="doDeployContract()">Deploy Contract</button>
+      </td>
+      <td colspan="2"><b>Result: Transaction Hash</b></br>
+        <input id="contracttransactionhash" class="ready" size="40" value=""> </br>
+        <!-- span id="contracttransactionhash" class="notready">...</span> </br -->
+        <span id="txnhasmessage" class="notready">Msg:</span>
+        <a href="" id="contracttransactionhash_link" target="_blank"></a>
+      </td>
+      <td align="left"><b>Contract Address</b>
+        <input id="contractaddress" class="ready" size="40" value=""> </br>
+        <span id="ctraddrmessage" class="notready">Msg: </span> </br>
+        <b>Wait to be minded. Click to check : </b>
+        <button id="getcontractaddress" onclick="getContractAddress()">Get Ctr Addr</button>
+        <a href="" id="contractaddress_link" target="_blank"></a>
+      </td>
+    </tr>
+
+
+
+    <tr>
+      <td colspan="4" bgcolor="lightblue"><b>Invoke the Contract</b> </td>
+    </tr>
+
+    <tr>
+      <td width="15%"><b>ABI Definition &amp; Contract Address are picked up from deployment. </b></td>
+      <td>
+        <span>
+          <select id="contract_select_function">
+              <option value="getNum">getNum()</option>
+              <option value="setNum">setNum()</option>
+          </select>
+        </span>
+      </td>
+      <td align="left">
+        <b> Parameter for setNum(): </b> <input id="setnum_parameter" size="6" type="text" value="5" />
+      </td>
+      <td>
+        <b>Estimated Gas: </b><input type="text" id="contract_execute_estimatedgas" size="10" value="4700000" />
+      </td>
+    </tr>
+
+    <tr>
+      <td width="15%"><b>Value (Ether) </b> <input id="invocation_send_value_in_ether" type="text" value="0" disabled /></td>
+      <td>
+        <span>
+          <button onclick="doContractFunctionCall()">Contract Function Call</button> 
+        </span>
+      </td>
+      <td align="left">
+        <span><button onclick="doContractSendCall()">Contract Function Send</button></span>
+      </td>
+      <td>
+        &nbsp;
+      </td>
+    </tr>
+
+    <tr>
+      <td width="15%"><b>Results</b></td>
+      <td>
+        <span id="invoke_details">.... </span>
+      </td>
+      <td align="left">
+        <span><b>Return</b></span><span id="invoke_return_value">...</span>
+      </td>
+      <td>
+        <b>TrHash</b><span id="invoke_contracttransactionhash" class="notready">...</span>
+        <a href="" id="invoke_contracttransactionhash_link" target="_blank"></a>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4" bgcolor="lightblue"> &nbsp;</td>
+    </tr>
+
+
+
+    <tr>
+      <td width="15%">Syncing : <button onclick="doGetSyncInfo()">Ask</button></td>
+      <td width="85%" align="left" colspan="3" id="get_sync_info"> {} </td>
+    </tr>
+
+  </table>
+
+  Message for test: <span id="message" class="notready">...</span> </br>
+  Message for test1: <span id="message1" class="notready">...</span> </br>
+  Message for test2: <span id="message2" class="notready">...</span> </br>
+  Message for test3: <span id="message3" class="notready">...</span> </br>
+  Message for test4: <span id="message4" class="notready">...</span> </br>
+  Message for test5: <span id="message5" class="notready">...</span> </br>
+  Message for test6: <span id="message6" class="notready">...</span> </br>
+  Send from account: <span id="select_to_unlock_account" class="notready">...</span> </br>
+  <!-- Send to account: <span id="send_to_account" class="notready">...</span> <br-->
+
+
+
+
+
+
+
+
+
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/utils.js"></script>
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

@@ -1,0 +1,254 @@
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI and BC POC</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="icon" type="image/png" href="http://thedapps.com/favicon-32x32.png" sizes="32x32" />
+
+    <title>Dapp N Intel-Service</title>
+    <!--script type="text/javascript" src="./scripts/dappnservice.js"></script-->
+    <link rel="stylesheet" href="styles/login_style.css">
+    <script type="text/javascript" src="scripts/dappnservice.js"></script>
+</head>
+
+<!--body style="background-image:url(./images/agreement.png); background-repeat:no-repeat; background-size:cover;" -->
+
+<!--body onload="initfn();" style="background-image:url(./images/agreement.png); background-repeat:no-repeat; background-size:cover;"-->
+
+<!--body  -->
+    <body onload="initfn()">
+            <!--body onload="xxxx()"-->
+
+
+    <!-- Trigger/Open The Modal -->
+    <!--button id="myBtn" onclick="myfun()">Open Modal</button -->
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <h1 align="center">
+            <font color=white>
+                <u> Let us thrive in togetherness</u>
+            </font>
+        </h1>
+        <!-- Modal content -->
+        <div class="modal-content">
+            <!--span class="close">&times;</spa -->
+            <font size=3 align="left">
+                <Form action="javascript:passwordCheck()" method="GET" name="login_form" id="login_form" >
+
+                    <b>Email</b>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="email" id="email" size="45" maxlength="60">
+                    <br>
+                    <br>
+                    <br>
+                    <b>Password</b> :
+                    <input type="text" name="pwd" id="pwd" size="15" maxlength="15">
+                    <input type="submit" value="Check" >
+                </Form>
+
+            </font>
+
+            <span id="message0"></span>
+            <span id="message1"></span>
+            <span id="message2"></span>
+            <span id="message3"></span>
+
+        </div>
+    </div>
+
+    <div id="startTalk" align="left">
+        <p align="center">
+            <font color="#00008B" size=5>
+                <b>D E C I D E</b>
+            </font>
+            <table bgcolor="white" align="center" width="75%" border="0">
+                <tr>
+                    <td bgcolor="#EBF5FB" width="43%">
+                        <font color="brown" size="3" align="center">Let's talk important things as expense and promises. Baanda believes in total transparency.
+                            <button onclick="costingshow()">Promises and Costs</button>
+                        </font>
+                    </td>
+                    <td rowspan="2" width="14%" align="Center">
+                        <img src="images/fractal2.gif" alt="Smiley face" height="100" width="100">
+                        <br>
+                        <b>Make your choice</b>
+                    </td>
+                    <td width="43%">
+                        <font color="blue" size=3 align="center">Please click 'showhideEth' to see your Ethere artifacts
+                            <button onclick="showHideEth()">Contract Artifacts</button>
+                            Not necessary for any of your activity (if you are curious).
+                        </font>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td width="43%">
+                        <font color="brown" size="3" align="center">Let's walk the walk. Let's make your work immutable via Baanda-it. Click
+                            <button onclick="newCopyrightShow()">New Copyright</button>
+                        </font>
+                    </td>
+                    <td width="43%" bgcolor="#EBF5FB">
+                        <font color="blue" size=3 align="centert">Want to play with your prior copyrights / creations?
+                            <button onclick="pastCopyright()">Past Copyrights</button>
+                        </font>
+                    </td>
+                </tr>
+            </table>
+        </p>
+    </div>
+
+    <div id="newCopyright" align="center">
+        <p align="center">
+            <font color=blue size=5>
+                <b>Copyright Your Creation</b>
+            </font>
+        </p>
+        <!--form enctype="multipart/form-data" name="newcrfile" id="newcrfile"  action="testfn()" -->
+         <form enctype="multipart/form-data" name="newcrfile" id="newcrfile"  action="" >
+            <table width="75%" cellspacing="0" border="0" bgcolor="#EBF5FB">
+                <tr>
+                    <td align="right" width="20%"> &nbsp;</td>
+                    <td align="left" width="80%"> &nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="right" width="20%">
+                        <b>Document Name:</b>
+                    </td>
+                    <td align="left" width="80%">
+                        <input type='text' name='docname' id='docname' size=30 maxlength=30> &nbsp;&nbsp;
+                        <font color=blue>Name of your work in 30 characters or less.
+                            <td align="left" width="80%"> &nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="right" width="20%"> &nbsp;</td>
+                    <td align="left" width="80%"> &nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="right" width="20%">
+                        <b>Creation's Summary</b>
+                        <br>
+                        <font color=blue>A producer's pitch</font>
+                    </td>
+                    <td align="left" width="80%">
+                        <textarea name="summary" id="summary" style="width:750px;height:150px;"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="right" width="20%"> &nbsp;</td>
+                    <td align="left" width="80%"> &nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="right" width="20%">
+                        <b>Your Journal</b>
+                        <br>
+                        <font color=blue>A note for yourself</font>
+                    </td>
+                    <td align="left" width="80%">
+                        <textarea name="journal" id="journal" style="width:750px;height:150px;"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" width="20%"> &nbsp;</td>
+                    <td align="left" width="80%"> &nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="right" width="20%"> &nbsp;</td>
+                    <td align="left" width="80%">
+                        <label for="file">Choose file to upload</label>
+                        <input type="file" id="cpfile" name="cpfile" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <!--input type="submit" value="Submit!" / --> &nbsp;
+                        <input type="button" name="button" value="Baanda it!" onClick="newerCopyright(this.form)">
+                        <font color=blue>Copyright it in this moment</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" width="20%"> &nbsp;</td>
+                    <td align="left" width="80%"> &nbsp;</td>
+                </tr>
+            </table>
+        </form>
+        <p align="center">
+            <span id="newcprmsg"></span>
+            <br><span id="debug1"></span>
+        </p>
+    </div>
+
+
+
+
+    <div id="costing" align="left">
+        <p align="center">
+
+            <table width="80%" cellspacing="0" border="0">
+                <tr>
+                    <td width=75%>
+                        <img src="images/costing.gif" alt="Smiley face" height="500" width="800">
+                    </td>
+                    <td width="25%" align="center">
+                        <font color="Brown" size="5">
+                            <b>Through the lense of imagination </b>
+                        </font>
+                        <br>
+                        <br>
+                        <img src="images/coffee.gif" alt="Smiley face" height="250" width="340">
+                        <br>
+                        <br>
+                        <font color="Black" size="4">
+                            <b>Let Baanda take you to your dreams</b>
+                        </font>
+                        <!--img src="images/moontoya.gif" alt="Smiley face" height="150" width="240" -->
+                    </td>
+                </tr>
+            </table>
+
+        </p>
+
+    </div>
+
+    <div id="pastCopyrights" align="left">
+        <P align="center">
+            <img src="images/thethirdleg.png"  height="550" width="950">
+        </P>
+    </div>
+
+
+    <div id="showEthStuff" align="center">
+        <p align="Center">
+            <font size="5">
+                <b>Your Unique Copyright Smart Contract Artifacts</b>
+            </font>
+        </p>
+        <table width="75%" cellspacing="0" border="1" bgcolor="white">
+            <tr>
+                <td width="15%">Txn Hash: </td>
+                <td width="75%" align="left" id='t-txnhash'>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td width="15%">Contract Addr: </td>
+                <td width="75%" align="left" id='t-conaddr'> </td>
+            </tr>
+            <tr>
+                <td width="15%">ABI: </td>
+                <td width="75%" align="left" id='t-abi'> </td>
+            </tr>
+        </table>
+    </div>
+
+    <br>
+    <span id="message7"></span>
+    <br>
+    <span id="message8"></span>
+
+
+    <script type="text/javascript" src="scripts/dappnservice.js"></script>
+</body>
+
+</html>
